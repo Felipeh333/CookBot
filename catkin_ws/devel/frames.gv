@@ -1,0 +1,12 @@
+digraph G {
+"dummy_root" -> "BASE_ROBO_V2"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1734024580.123 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "world"[label="Broadcaster: /static_transform\nAverage rate: 97.950 Hz\nMost recent transform: 1734024580.123 ( -0.000 sec old)\nBuffer length: 4.982 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1734024580.123"[ shape=plaintext ] ;
+ }->"dummy_root";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1734024580.123"[ shape=plaintext ] ;
+ }->"base_link";
+}

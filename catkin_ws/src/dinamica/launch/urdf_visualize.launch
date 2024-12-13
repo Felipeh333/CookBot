@@ -1,0 +1,18 @@
+<launch>
+    <!-- Define o parâmetro com o conteúdo do arquivo URDF -->
+    <param 
+        name="robot_description" 
+        textfile="$(find dinamica)/dinamica.urdf" />
+
+    <!-- Nó para spawnar o modelo no Gazebo -->
+    <node 
+        pkg="gazebo_ros" 
+        exec="spawn_entity.py" 
+        name="spawn_urdf" 
+        output="screen"
+        args="-param robot_description -entity dinamica" />
+
+    <!-- Inclui o lançamento do mundo vazio no Gazebo -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch.xml" />
+</launch>
+

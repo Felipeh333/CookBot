@@ -1,0 +1,8 @@
+prefix=/home/felipeh/catkin_ws/devel
+
+Name: sjtu-drone
+Description: Description of sjtu-drone
+Version: 0.0.0
+Cflags: -I/home/felipeh/catkin_ws/src/sjtu-drone/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy image_transport std_msgs sensor_msgs geometry_msgs message_runtime gazebo_ros

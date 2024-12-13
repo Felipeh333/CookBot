@@ -1,0 +1,8 @@
+prefix=/home/felipeh/catkin_ws/devel
+
+Name: dinamica
+Description: Description of dinamica
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

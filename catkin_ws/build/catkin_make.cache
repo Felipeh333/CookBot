@@ -1,0 +1,2 @@
+Pista_Seguidor:Semear_Hover2024/hover_g2:Semear_Hover2024/projeto_ws:dinamica:my_first_pkg:my_robot_urdf:sjtu-drone
+-DCATKIN_DEVEL_PREFIX=/home/felipeh/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/felipeh/catkin_ws/install -G Unix Makefiles

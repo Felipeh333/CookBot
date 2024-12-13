@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<robot name="manipulador_3dof" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Base -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.085" length="0.01"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+  </link>
+
+  <!-- Elo Azul -->
+  <link name="link_1">
+    <visual>
+      <geometry>
+        <cylinder radius="0.03" length="0.47"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <!-- Elo Amarelo -->
+  <link name="link_2">
+    <visual>
+      <geometry>
+        <box size="0.6 0.05 0.05"/>
+      </geometry>
+      <material name="yellow"/>
+    </visual>
+  </link>
+
+  <!-- Elo Verde -->
+  <link name="link_3">
+    <visual>
+      <geometry>
+        <box size="0.2 0.1 0.05"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <!-- Junta prismática (base para link_1) -->
+  <joint name="joint_1" type="prismatic">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.17" effort="100" velocity="0.1"/>
+  </joint>
+
+  <!-- Junta rotacional (link_1 para link_2) -->
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0 0 0.47" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+
+  <!-- Junta rotacional (link_2 para link_3) -->
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <origin xyz="0.6 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+</robot>
+
